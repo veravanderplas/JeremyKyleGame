@@ -1,12 +1,13 @@
 $(document).ready(function () {
     var score = 0;
     //Hides all elements at start of game
-    $("p, button.restart, #postScore, #name, .imgRyan, #imgJemma, #logoHeaderSmall").hide();
+    $("p, button.restart, #postScore, #name, .imgRyan, #imgJemma, #logoHeaderSmall, #scoreboardTable").hide();
 
 
     //shows first Q after button is clicked
     $(".getStarted").on('click', () => {
         $("#header").hide();
+        $("#scoreboardTable").show();
         $(".intro").show();
         $(".one").show();
         $(".imgRyan, #imgJemma").show();
@@ -14,6 +15,8 @@ $(document).ready(function () {
         $(".opendoor, .nothome, .daftcunt").show();
         $("#score").html(score);
         $("#score").show();
+        $(".pointsText").show();
+        $("#walkingHamster").hide();
     });
 
 //correct answer Q1
@@ -109,13 +112,13 @@ $(document).ready(function () {
         $("#score").show();
     }
 
-    $.get('http://localhost:3000/scoreboard', function (result) {
-        $('#firstPlaceName.firstplace').html(JSON.parse(result)[0].name);
-        $('#secondPlaceName.secondplace').html(JSON.parse(result)[1].name);
-        $('#thirdPlaceName.thirdplace').html(JSON.parse(result)[2].name);
-        $('#firstPlaceScore.firstplace').html(JSON.parse(result)[0].score);
-        $('#secondPlaceScore.secondplace').html(JSON.parse(result)[1].score);
-        $('#thirdPlaceScore.thirdplace').html(JSON.parse(result)[2].score);
-    });
+    // $.get('http://localhost:3000/scoreboard', function (result) {
+        //     $('#firstPlaceName.firstplace').html(JSON.parse(result)[0].name);
+        //     $('#secondPlaceName.secondplace').html(JSON.parse(result)[1].name);
+        //     $('#thirdPlaceName.thirdplace').html(JSON.parse(result)[2].name);
+        //     $('#firstPlaceScore.firstplace').html(JSON.parse(result)[0].score);
+        //     $('#secondPlaceScore.secondplace').html(JSON.parse(result)[1].score);
+        //     $('#thirdPlaceScore.thirdplace').html(JSON.parse(result)[2].score);
+        // });
 
 });
