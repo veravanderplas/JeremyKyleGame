@@ -1,14 +1,16 @@
 $(document).ready(function () {
     var score = 0;
     //Hides all elements at start of game
-    $("p,img, button.restart, #postScore, #name").hide();
+    $("p, button.restart, #postScore, #name, .imgRyan, #imgJemma, #logoHeaderSmall").hide();
 
 
     //shows first Q after button is clicked
     $(".getStarted").on('click', () => {
-        $(".getStarted").hide();
+        $("#header").hide();
         $(".intro").show();
         $(".one").show();
+        $(".imgRyan, #imgJemma").show();
+        $("#logoHeaderSmall").show();
         $(".opendoor, .nothome, .daftcunt").show();
         $("#score").html(score);
         $("#score").show();

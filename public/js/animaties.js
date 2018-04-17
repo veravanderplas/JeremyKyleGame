@@ -1,6 +1,6 @@
 /* --------------- EXPLODE IN PIECES JEMMA --------------- */
 
-var img = "./img/jemma.png";
+var img = "public/img/jemma.png";
 
 $(document).ready(function(){
 
@@ -150,7 +150,7 @@ function getRandom(max, min){
 }
 
     function picture(){
-        var pic = "./img/ballon.png"
+        var pic = "public/img/ballon.png"
         document.getElementById('dieStupidCunt').src = pic.replace('90x90', '225x225');
         document.getElementById('dieStupidCunt').style.display='block';
 
