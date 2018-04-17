@@ -15,40 +15,65 @@
 </head>
 <body>
 
-<div id="walkingHamster"></div>
-
-<div id="container">
-
     <div id="header">
         <div id="imgDisplay"></div>
-        <img src="./public/img/logo2.png" id="img-header" height="250">
+        <img src="./public/img/logo2.png" id="img-header" height="230">
         <div id="headerText">
             <h1>A game based on a true story<br>
                 from the Jeremy Kyle Show
             </h1>
         </div>
         <div class="wobblyHead"></div>
-        <button class="getStarted">Let&#39;s welcome into the studio, RYAN!</button>
+        <div class="buttonWithHamster">
+            <div id="walkingHamster"></div>
+            <button class="getStarted">Let&#39;s welcome into the studio, RYAN!</button>
+        </div>
     </div>
 
     <div id="logoHeaderSmall">
-        <img src="./public/img/logo2.png" id="imgHeaderSmall" height="130">
+        <img src="./public/img/logo2.png" id="imgHeaderSmall" height="140">
     </div>
 
-<span id="firstPlaceName" class="scoreboardName firstplace"></span>&nbsp;<span id="firstPlaceScore" class="firstplace scoreboardScore"></span><br>
-<span id="secondPlaceName" class="scoreboardName secondplace"></span>&nbsp;<span id="secondPlaceScore" class="secondplace scoreboardScore"></span><br>
-<span id="thirdPlaceName" class="scoreboardName thirdplace"></span>&nbsp; <span id="thirdPlaceScore" class="thirdplace scoreboardScore"></span><br>
-
-    <!-- images first question -->
-    <div class="imgRyan">
-        <img src="./public/img/ryan.png" height="170">
+    <div id="scoreboardTable">
+        <img src="./public/img/scoreboard.png" class="scoreboard" width="150">
+        <table>
+            <tr>
+                <td class="numberTable"></td>
+                <td class="nameTable">Name</td>
+                <td class="pointsTable">Points</td>
+            </tr>
+            <tr>
+                <td class="numberTable">1</td>
+                <td class="nameTable"><span id="firstPlaceName" class="scoreboardName firstplace">Annabel</span></td>
+                <td class="pointsTable"><span id="firstPlaceScore" class="firstplace scoreboardScore">9</span></td>
+            </tr>
+            <tr>
+                <td class="numberTable">2</td>
+                <td class="nameTable"><span id="secondPlaceName" class="scoreboardName secondplace">Hannah</span></td>
+                <td class="pointsTable"><span id="secondPlaceScore" class="secondplace scoreboardScore">8</span></td>
+            </tr>
+            <tr>
+                <td class="numberTable">3</td>
+                <td class="nameTable"><span id="thirdPlaceName" class="scoreboardName thirdplace">Michel</span></td>
+                <td class="pointsTable"><span id="thirdPlaceScore" class="thirdplace scoreboardScore">3</span></td>
+            </tr>
+        </table>
     </div>
 
-    <div id="imgJemma">
-    </div>
-    <img id="dieStupidCunt" style="display:none;" />
+    <!--&lt;!&ndash; images first question &ndash;&gt;-->
+    <!--<div class="imgRyan">-->
+        <!--<img src="./public/img/ryan.png" height="170">-->
+    <!--</div>-->
 
-<p id="score"></p>
+    <!--<div id="imgJemma">-->
+    <!--</div>-->
+    <!--<img id="dieStupidCunt" style="display:none;" />-->
+
+    <div class="points">
+        <p class="pointsText">Points:</p><p id="score"></p>
+    </div>
+
+    <div id="container">
 <p class="intro">Ryan, a 22 year old boy from Stevenage, Hertfordshire, recently broke up with his love Jemma
     Tracey. He&#39;s not taking the breakdown of their six-year relationship so well. Jemma is coming over to his home, collecting her belongings.<br>
 </p>
@@ -83,7 +108,6 @@
 <button id="postScore">Save</button>
 <br>
 <button class="restart">Try again</button>
-
-</div>
+    </div>
 </body>
 </html>
