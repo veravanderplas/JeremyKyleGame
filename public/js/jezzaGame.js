@@ -1,15 +1,15 @@
 $(document).ready(function () {
     var score = 0;
     //Hides all elements at start of game
-    $("p, button.restart, #postScore, #name, .imgRyan, #imgJemma, #logoHeaderSmall, #scoreboardTable").hide();
 
+    $("p, button.restart, #postScore, #name, .imgRyan, #imgJemma, #logoHeaderSmall, #scoreboardTable").hide();
 
     //shows first Q after button is clicked
     $(".getStarted").on('click', () => {
         $("#header").hide();
         $("#scoreboardTable").show();
         $(".intro").show();
-        $(".one").show();
+        $(".Q1").show();
         $(".imgRyan, #imgJemma").show();
         $("#logoHeaderSmall").show();
         $(".opendoor, .nothome, .daftcunt").show();
@@ -21,27 +21,63 @@ $(document).ready(function () {
 
 //correct answer Q1
     $(".opendoor").on('click', () => {
-        $(".answer").hide();
-        $(".two").show();
+        $(".answer, .Q1").hide();
+        $(".Q2, .paragraphOne").show();
         $(".givehamster, .ransome, .alreadydead").show();
         updateScore();
     });
 
     //correct answer Q2
     $(".ransome").on('click', () => {
-        $(".answer").hide();
-        $(".three").show();
+        $(".answer, .Q2").hide();
+        $(".Q3, .paragraphTwo").show();
         $(".shove, .giveup, .pickup ").show();
         updateScore();
     });
 
     //correct answer Q3
     $(".pickup").on('click', () => {
-        $(".answer").hide();
-        $(".four").show();
+        $(".answer, .Q3").hide();
+        $(".Q4, .paragraphThree").show();
         $(".cry, .beg, .hurl ").show();
         updateScore()
     });
+
+    $(".hurl").on('click', () => {
+        $(".answer, .Q4").hide();
+        $(".Q5, .paragraphFour").show();
+        $(".crush, .bin, .spit").show();
+        updateScore()
+    });
+
+    $(".crush").on('click', () => {
+        $(".answer, .Q5").hide();
+        $(".Q6, .paragraphFive").show();
+        $(".mop, .dog, .call").show();
+        updateScore()
+    });
+
+    $(".dog").on('click', () => {
+        $(".answer, .Q6").hide();
+        $(".Q7, .paragraphSix").show();
+        $(".leave, .microwave, .blender").show();
+        updateScore()
+    });
+
+    $(".microwave").on('click', () => {
+        $(".answer, .Q7").hide();
+        $(".Q8, .paragraphSeven").show();
+        $(".5min, .2min, .8min").show();
+        updateScore()
+    });
+
+    $(".5min, .2min, .8min").on('click', ()=>{
+      $("a, .end").show();
+        $(".answer, .Q8").hide();
+        score = 10000000
+        $("#score").html(score);
+    });
+
 
     // wrong answers
     $("p.wrong").on('click', () => {
@@ -51,7 +87,7 @@ $(document).ready(function () {
 
 //this function restarts the game
     function wrongAnswer() {
-        $(".intro, .question, .answer").hide();
+        $(".intro, .story, .question, .answer").hide();
         $('button.restart, #name, #postScore, img').show();
         $('button.restart').on('click', () => {
             $("p, img, button.restart,#name, #postScore").hide();
@@ -112,13 +148,13 @@ $(document).ready(function () {
         $("#score").show();
     }
 
-    // $.get('http://localhost:3000/scoreboard', function (result) {
-        //     $('#firstPlaceName.firstplace').html(JSON.parse(result)[0].name);
-        //     $('#secondPlaceName.secondplace').html(JSON.parse(result)[1].name);
-        //     $('#thirdPlaceName.thirdplace').html(JSON.parse(result)[2].name);
-        //     $('#firstPlaceScore.firstplace').html(JSON.parse(result)[0].score);
-        //     $('#secondPlaceScore.secondplace').html(JSON.parse(result)[1].score);
-        //     $('#thirdPlaceScore.thirdplace').html(JSON.parse(result)[2].score);
-        // });
+    $.get('http://localhost:3000/scoreboard', function (result) {
+            $('#firstPlaceName.firstplace').html(JSON.parse(result)[0].name);
+            $('#secondPlaceName.secondplace').html(JSON.parse(result)[1].name);
+            $('#thirdPlaceName.thirdplace').html(JSON.parse(result)[2].name);
+            $('#firstPlaceScore.firstplace').html(JSON.parse(result)[0].score);
+            $('#secondPlaceScore.secondplace').html(JSON.parse(result)[1].score);
+            $('#thirdPlaceScore.thirdplace').html(JSON.parse(result)[2].score);
+        });
 
 });
