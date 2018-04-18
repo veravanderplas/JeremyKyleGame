@@ -12,10 +12,6 @@ $(document).ready(function(){
         objs.explode();
     });
 
-    $("#reset").click(function(){
-        objs.reset();
-    });
-
 });
 
 
@@ -36,12 +32,12 @@ function obj(){
 
         this.img.onload = function(){
 
-            var obj = createParticles($this.img, 100, 100, this.id);
+            var obj = createParticles($this.img, this.id);
 
             this.item = obj;
             $this.item = obj;
 
-            var parent = document.getElementById('imgJemma');
+            var parent = document.getElementById('imgJemmaItem');
 
             parent.appendChild(obj);
         }
@@ -130,16 +126,6 @@ function obj(){
 
     }
 
-    this.reset = function(){
-
-        console.log($("#"+this.id).children().length);
-        $("#"+this.id).empty().remove();
-        $("#container").children("div").remove();
-
-
-        $this.createCanvas();
-
-    }
 
 };
 

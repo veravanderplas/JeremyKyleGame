@@ -2,7 +2,7 @@ $(document).ready(function () {
     var score = 0;
     //Hides all elements at start of game
 
-    $("p, button.restart, #postScore, #name, .imgRyan, #imgJemma, #logoHeaderSmall, #scoreboardTable").hide();
+    $("p, button.restart, #postScore, #name, .imgRyan, #imgJemma, #logoHeaderSmall, #scoreboardTable, .wrongAnswerDesign").hide();
 
     //shows first Q after button is clicked
     $(".getStarted").on('click', () => {
@@ -87,10 +87,10 @@ $(document).ready(function () {
 
 //this function restarts the game
     function wrongAnswer() {
-        $(".intro, .story, .question, .answer").hide();
-        $('button.restart, #name, #postScore, img').show();
+        $(".intro, .story, .question, .answer, .imgRyan, #imgJemma, p").hide();
+        $('button.restart, #name, #postScore, .wrongAnswerDesign').show();
         $('button.restart').on('click', () => {
-            $("p, img, button.restart,#name, #postScore").hide();
+            $("img, button.restart,#name, #postScore").hide();
             $('.getStarted').show();
             score = 0;
         })
