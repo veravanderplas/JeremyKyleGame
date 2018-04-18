@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 h1 {
     font-family: 'Roboto Mono', monospace;
     font-size: 20px;
@@ -84,7 +89,7 @@ img {
 .buttonWithHamster {
     margin: auto;
     width: 100%;
-    padding-top: 20%;
+    padding-top: 15%;
 }
 
 .getStarted {
@@ -114,8 +119,8 @@ img {
     position: absolute;
     width: 58vmin;
     height: 58vmin;
-    right: 1%;
-    top: 60%;
+    right: 0;
+    top: 0;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-size: 93% auto;
@@ -127,7 +132,6 @@ img {
     position: absolute;
     width: 43.86%;
     height: 57.57%;
-    right: 5%;
     top: 6.6%;
     background-size: contain;
     background-image: url("../img/jeremykylehead.gif");
@@ -171,7 +175,7 @@ img {
     padding-left: 15px;
 }
 
-.imgRyan, #imgJemma {
+#imgJemma {
     display: block; /*for the img inside your div */
     margin: 0 auto;
     position: absolute;
@@ -179,8 +183,42 @@ img {
 }
 
 .imgRyan {
-    left: 2%;
-    top: 30%;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    -webkit-animation: wobble .8s infinite ease-in-out;
+    animation: wobble .8s infinite ease-in-out;
+}
+
+@-webkit-keyframes wobble {
+    1% {
+        -webkit-transform: rotateZ(0deg) translateX(0);
+        transform: rotateZ(0deg) translateX(0);
+    }
+    40% {
+        -webkit-transform: rotateZ(-10deg) translateX(2%);
+        transform: rotateZ(-10deg) translateX(2%);
+    }
+    50% {
+        -webkit-transform: rotateZ(-10deg) translateX(4%);
+        transform: rotateZ(-10deg) translateX(4%);
+    }
+    80% {
+        -webkit-transform: rotateZ(10deg) translateX(5%);
+        transform: rotateZ(10deg) translateX(5%);
+    }
+    100% {
+        -webkit-transform: rotateZ(0deg) translateX(0);
+        transform: rotateZ(0deg) translateX(0);
+    }
+}
+
+.imgRyan-item {
+    position: absolute;
+    left: 7%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #imgJemma {
